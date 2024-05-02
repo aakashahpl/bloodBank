@@ -1,118 +1,201 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
+      className=" px-11 bg-black"
     >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
+      <section id="nav">
+
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style={{
+          paddingInline: "5rem",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center"
+        }}>
+          <a className="navbar-brand font-bold text-3xl" href="#">BLOOD DONORS<sub><small className=" ml-2">THE REAL HEROS</small></sub></a>
+          <div className="text-white flex flex-row gap-16">
+           <a href="/bloodBank"> <h3 className=" text-lg text-white ">Blood Banks</h3></a>
+            <h3 className=" text-lg">BloodBanks</h3>
+            <h3 className=" text-lg">BloodBanks</h3>
+            <h3 className=" text-lg">BloodBanks</h3>
+ 
+          </div>
+
+        </nav>
+
+      </section>
+
+      <section id="banner">
+
+        <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+          <ol className="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img className="d-block w-100" src="img/sl1.jpg" alt="First slide" style={{ height: '600px' }} />
+              <div className="carousel-caption text-left text-danger">
+                <h5>DONATE BLOOD SAVE LIFE.</h5>
+                <h1 className="display-4 font-weight-bold">DONATE BLOOD<br /> AND INSPIRES OTHERS</h1>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <img className="d-block w-100" src="img/sl4.jpg" alt="Second slide" style={{ height: '600px' }} />
+              <div className="carousel-caption text-left text-white">
+                <h5>DONATE BLOOD SAVE LIFE.</h5>
+                <h1 className="display-4 font-weight-bold">DONATE BLOOD<br /> AND INSPIRES OTHERS</h1>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <img className="d-block w-100" src="img/sl3.jpg" alt="Third slide" style={{ height: '600px' }} />
+              <div className="carousel-caption text-left text-danger">
+                <h5 className="">DONATE BLOOD SAVE LIFE.</h5>
+                <h1 className="display-4 font-weight-bold">DONATE BLOOD <br />AND INSPIRES OTHERS</h1>
+              </div>
+            </div>
+          </div>
+          <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="sr-only">Previous</span>
+          </a>
+          <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="sr-only">Next</span>
           </a>
         </div>
-      </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      </section>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      <section id="donationprocess" className="bg-secondary">
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+        <div className="container-fluid">
+          <div className="row text-center">
+            <div className="col-lg-12">
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
+              <h1 className="py-2 mt-4 text-white display-4 font-weight-bold">DONATION PROCESS</h1>
+              <h3 className="font-weight-normal py-4 text-white">The donation process from the time you arrive center until the time you leave</h3>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+            </div>
+          </div>
+
+
+          <div className="row text-center  text-white">
+            <div className="col-lg-4">
+
+              <div className="card bg-dark">
+                <img className="card-img-top" src="img/rg.jpg" alt="Card image cap" style={{ height: '200px' }} />
+                <div className="card-body text-white">
+                  <h5 className="card-title">REGISTRATION</h5>
+                  <p className="card-text">You need to complete a very simple registration form. Which contains all required contact information to enter in the donation process.</p>
+
+                </div>
+              </div>
+
+            </div>
+
+            <div className="col-lg-4">
+
+              <div className="card bg-dark">
+                <img className="card-img-top" src="/img/scr.jpg" alt="Card image cap" style={{ height: '200px' }} />
+                <div className="card-body text-white">
+                  <h5 className="card-title">SCREENING</h5>
+                  <p className="card-text">A drop of blood from your finger will take for simple test to ensure that your blood iron levels are proper enough for donation process.</p>
+
+                </div>
+              </div>
+
+            </div>
+
+            <div className="col-lg-4">
+
+              <div className="card bg-dark" >
+                <img className="card-img-top" src="/img/bd.jpg" alt="Card image cap" style={{ height: '200px' }} />
+                <div className="card-body text-white">
+                  <h5 className="card-title">DONATION</h5>
+                  <p className="card-text">After ensuring and passed screening test successfully you will be directed to a donor bed for donation. It will take only 6-10 minutes.</p>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section id="join">
+
+        <div className="container-fluid bg-secondary text-white">
+          <div className="row text-center">
+            <div className="col-lg-12">
+              <h1 className="display-4 mt-4 py-3 font-weight-bold">JOIN US</h1>
+              <p className="font-weight-bold py-3">FEEL THE REAL PEACE</p>
+
+            </div>
+          </div>
+
+          <div className="card card-body bg-dark text-white">
+            <div className="card-title text-center">
+              <h3>REGISTRATION FORM</h3>
+              <p className="font-weight-light"><small>Please fill the following information to register as voluntary blood donor and become part of our vision. Kindly update your date of donation once done, so that your name will be hidden automatically till next 4 Months. Also please update your profile/information if in case you relocate in future
+              </small></p>
+            </div>
+            <form className="">
+              <div className="form-row ">
+
+                <div className="form-group col-md-6">
+                  <input type="name" name="name" id="name" placeholder="Name" className="form-control" />
+                </div>
+
+                <div className="form-group col-md-3">
+                  <input type="text" name="age" id="age" placeholder="Age" className="form-control" min="50" max="" />
+                </div>
+
+                <div className="form-group col-md-3">
+                  <input type="text" name="weight" id="weight" placeholder="Weight" className="form-control" />
+                </div>
+              </div>
+
+              <div className="form-row">
+                <div className="form-group col-md-6">
+                  <input type="text" name="Address" id="address" placeholder="Address" className="form-control" />
+                </div>
+
+                <div className="form-group col-md-3">
+                  <input type="number" name="number" id="number" placeholder="Number" className="form-control" maxlength="11" />
+                </div>
+                <div className="form-group col-md-3">
+                  <select className="form-control" id="bloodgroup">
+                    <option selected="">Choose Blood Group</option>
+                    <option>A+</option>
+                    <option>A-</option>
+                    <option>B+</option>
+                    <option>B-</option>
+                    <option>O+</option>
+                    <option>O-</option>
+                    <option>AB+</option>
+                    <option>AB-</option>
+                  </select>
+                </div>
+              </div>
+
+              <input type="submit" name="submit" className="btn btn-outline-success btn-lg btn-block" />
+            </form>
+          </div>
+
+        </div>
+
+
+      </section>
+    </main >
   );
 }
