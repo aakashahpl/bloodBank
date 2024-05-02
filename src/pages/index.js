@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <main
-      className=" px-11 bg-black"
+      className=" px-11"
     >
       <section id="nav">
 
@@ -21,10 +21,9 @@ export default function Home() {
           <a className="navbar-brand font-bold text-3xl" href="#">BLOOD DONORS<sub><small className=" ml-2">THE REAL HEROS</small></sub></a>
           <div className="text-white flex flex-row gap-16">
            <a href="/bloodBank"> <h3 className=" text-lg text-white ">Blood Banks</h3></a>
-            <h3 className=" text-lg">BloodBanks</h3>
-            <h3 className=" text-lg">BloodBanks</h3>
-            <h3 className=" text-lg">BloodBanks</h3>
- 
+           <a href="/bloodBank"> <h3 className=" text-lg text-white ">Blood Banks</h3></a>
+           <a href="/bloodBank"> <h3 className=" text-lg text-white ">Blood Banks</h3></a>
+           <a href="/bloodBank"> <h3 className=" text-lg text-white ">Blood Banks</h3></a>
           </div>
 
         </nav>
