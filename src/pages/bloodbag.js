@@ -37,25 +37,10 @@ export default function Home() {
     }, []);
 
     return (
-        <main className="px-11 bg-black">
+        <main className="mx-10 bg-black">
             {/* Existing Navigation Section */}
             <section id="nav">
-                <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style={{
-                    paddingInline: "5rem",
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    alignItems: "center"
-                }}>
-                    {/* Existing Navigation Links */}
-                    <a className="navbar-brand font-bold text-3xl" href="#">BLOOD DONORS<sub><small className=" ml-2">THE REAL HEROS</small></sub></a>
-                    <div className="text-white flex flex-row gap-16">
-                        <a href="/bloodBank"> <h3 className=" text-lg text-white ">Blood Banks</h3></a>
-                        <a href="/bloodbag"> <h3 className=" text-lg text-white active">Need Blood?</h3></a>
-                        <h3 className=" text-lg">BloodBanks</h3>
-                        <h3 className=" text-lg">BloodBanks</h3>
-                    </div>
-                </nav>
+                {/* Existing Navigation Content */}
             </section>
 
             {/* Existing Banner Section */}
@@ -73,39 +58,30 @@ export default function Home() {
                 <div className="container-fluid bg-secondary text-white">
                     <div className="row text-center">
                         <div className="col-lg-12">
-                            <h1 className="display-4 mt-4 py-3 font-weight-bold">Blood Bank Availability</h1>
+                            <h1 className="display-4 mt-4 py-3 font-weight-bold">Blood bag Availability</h1>
                         </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {bloodBankData.map((bank) => (
+                            <div key={bank.id} className=" bg-gray-800 rounded-lg shadow-md p-6">
+                                <h2 className="text-xl font-bold mb-2">{bank.bagid}</h2>
+                                <p className="text-gray-400 mb-2">Blood Type: {bank.bloodtype}</p>
+                                <p className="text-gray-400">Expiry Date: {bank.expdate ? new Date(bank.expdate).toLocaleDateString() : '-'}</p>
+                                <p className='flex '>
+                                    Status:
+                                    <p className={bank.bagstatus === 'Available' ? 'text-green-500' : 'text-red-500'}>
+                                        {bank.bagstatus}
+                                    </p>
+                                </p>
+                            </div>
+                        ))}
                     </div>
 
                     {isLoading && <p className="text-center">Loading blood bank data...</p>}
                     {error && <p className="text-center text-red-500 font-bold">Error: {error}</p>}
-                    {bloodBankData.length > 0 && (
-                        <table className="table-auto w-full mx-auto border border-gray-300">
-                            <thead>
-                                <tr className="bg-gray-200">
-                                    <th className="px-4 py-2 text-left">Bag ID</th>
-                                    <th className="px-4 py-2 text-left">Blood Type</th>
-                                    <th className="px-4 py-2 text-left">Expiry Date</th>
-                                    <th className="px-4 py-2 text-left">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {bloodBankData.map((bank) => (
-                                    <tr key={bank.id} className="border-b border-gray-300">
-                                        <td className="px-4 py-2">{bank.bagid}</td>
-                                        <td className="px-4 py-2">{bank.bloodtype}</td>
-                                        <td className="px-4 py-2">
-                                            {bank.expdate ? new Date(bank.expdate).toLocaleDateString() : '-'}
-                                        </td>
-                                        <td className="px-4 py-2">{bank.bagstatus}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    )
-                    }
                 </div>
             </section>
         </main>
-    )
+    );
 }
