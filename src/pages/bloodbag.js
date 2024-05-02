@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../../client'; // Assuming Supabase client is imported
 import Image from 'next/image';
@@ -5,6 +6,36 @@ import { Inter } from 'next/font/google';
 import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] });
+
+// Simple Navbar component
+const Navbar = () => {
+    return (
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style={{
+            paddingInline: "5rem",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center"
+        }}>
+            <a href="/">
+                <p className="navbar-brand font-bold text-3xl">BLOOD DONORS<sub><small className=" ml-2">THE REAL HEROES</small></sub></p>
+            </a>
+            <div className="text-white flex flex-row gap-16">
+                <a href="/bloodBank">
+                    <p className="text-lg text-white">Blood Banks</p>
+                </a>
+                <a href="/bloodbag">
+                    <p className="text-lg text-white active">Need Blood?</p>
+                </a>
+                <a href="/someOtherPage">
+                    <p className="text-lg text-white">Some Other Page</p>
+                </a>
+                {/* Add more links as needed */}
+            </div>
+        </nav>
+    );
+};
+
 
 export default function Home() {
     const [bloodBankData, setBloodBankData] = useState([]);
@@ -38,27 +69,14 @@ export default function Home() {
 
     return (
         <main className="mx-10 bg-black">
-            {/* Existing Navigation Section */}
-            <section id="nav">
-                {/* Existing Navigation Content */}
-            </section>
-
-            {/* Existing Banner Section */}
-            <section id="banner">
-                {/* Existing Banner Content */}
-            </section>
-
-            {/* Existing Donation Process Section */}
-            <section id="donationprocess" className="bg-secondary">
-                {/* Existing donation process content */}
-            </section>
-
+            {/* Navbar */}
+            <Navbar />
             {/* Blood Bank Data Section */}
-            <section id="bloodbankdata">
+            <section id="bloodbankdata" className='pt-16'>
                 <div className="container-fluid bg-secondary text-white">
                     <div className="row text-center">
                         <div className="col-lg-12">
-                            <h1 className="display-4 mt-4 py-3 font-weight-bold">Blood bag Availability</h1>
+                            <h1 className="display-4 mt-4 py-3 font-weight-bold">Blood Bag Availability</h1>
                         </div>
                     </div>
 
