@@ -39,24 +39,7 @@ export default function Home() {
     return (
         <main className="px-11 bg-black">
             {/* Existing Navigation Section */}
-            <section id="nav">
-                <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style={{
-                    paddingInline: "5rem",
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    alignItems: "center"
-                }}>
-                    {/* Existing Navigation Links */}
-                    <a className="navbar-brand font-bold text-3xl" href="#">BLOOD DONORS<sub><small className=" ml-2">THE REAL HEROS</small></sub></a>
-                    <div className="text-white flex flex-row gap-16">
-                        <a href="/bloodBank"> <h3 className=" text-lg text-white ">Blood Banks</h3></a>
-                        <a href="/bloodbag"> <h3 className=" text-lg text-white active">Need Blood?</h3></a>
-                        <h3 className=" text-lg">BloodBanks</h3>
-                        <h3 className=" text-lg">BloodBanks</h3>
-                    </div>
-                </nav>
-            </section>
+          
 
             {/* Existing Banner Section */}
             <section id="banner">
