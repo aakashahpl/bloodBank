@@ -1,6 +1,8 @@
-import React from "react";
-import { useForm,handleSubmit } from "react-hook-form";
-import { z } from "zod";
+import React, { useEffect, useState } from "react";
+import { useForm, handleSubmit } from "react-hook-form";
+import { date, z } from "zod";
+import { supabase } from '../../client';
+import { LampDesk } from "lucide-react";
 
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -46,9 +48,37 @@ const MyForm = () => {
     },
   });
 
-  const onSubmit = (data) => {
-    console.log("Submitted data:", data);
+  const onSubmit = async (info) => {
+    console.log("Submitted data:", info);
+    const { data, error } = await supabase
+      .from('donor')
+      .insert([
+        { 'donorid': rownum + 1, name: info.username, gender: info.gender, dateofbirth: info.dateOfBirth, bloodtype: info.bloodType, contactinfo: info.contactInfo }
+      ])
+      .select()
+
+    console.log('asfdasdf', error)
   };
+
+  const [rownum, setrowcount] = useState(0)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('donor')
+          .select('donorid', 'COUNT(*)');
+        if (error) {
+          throw error;
+        }
+        setrowcount(data.length);
+        console.log(data.length)
+      } catch (error) {
+        console.error('Error fetching data:', error.message);
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
     <div className=" w-full h-screen  bg-[#6c757d]">
