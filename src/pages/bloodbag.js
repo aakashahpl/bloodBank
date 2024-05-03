@@ -68,9 +68,20 @@ export default function Home() {
     }, []);
 
     return (
-        <main className="mx-10 bg-black">
-            {/* Navbar */}
-            <Navbar />
+        <main className="px-11 bg-black">
+            {/* Existing Navigation Section */}
+          
+
+            {/* Existing Banner Section */}
+            <section id="banner">
+                {/* Existing Banner Content */}
+            </section>
+
+            {/* Existing Donation Process Section */}
+            <section id="donationprocess" className="bg-secondary">
+                {/* Existing donation process content */}
+            </section>
+
             {/* Blood Bank Data Section */}
             <section id="bloodbankdata" className='pt-16'>
                 <div className="container-fluid bg-secondary text-white">
