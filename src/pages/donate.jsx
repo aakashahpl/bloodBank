@@ -1,5 +1,5 @@
 import React from "react";
-import { useForm } from "react-hook-form";
+import { useForm,handleSubmit } from "react-hook-form";
 import { z } from "zod";
 
 const formSchema = z.object({
@@ -9,14 +9,9 @@ const formSchema = z.object({
   gender: z.string().nonempty({
     message: "Gender is required.",
   }),
-  dateOfBirth: z.date().refine(
-    (value) => {
-      return true;
-    },
-    {
-      message: "Invalid date of birth.",
-    }
-  ),
+  dateOfBirth: z.string().nonempty({
+    message: "Gender is required.",
+  }),
   bloodType: z.string().nonempty({
     message: "Blood type is required.",
   }),
@@ -85,7 +80,7 @@ const MyForm = () => {
             <label>Date of Birth</label>
             <input
               className=" rounded-sm h-10 w-80 bg-slate-400 px-4"
-              type="date"
+              type="text"
               {...register("dateOfBirth")}
             />
             {errors.dateOfBirth && <span>{errors.dateOfBirth.message}</span>}
@@ -121,7 +116,7 @@ const MyForm = () => {
               <span>{errors.contactInfo.phone.message}</span>
             )}
           </div>
-          <button className=" border-[1px] border-solid border-black rounded px-20 py-2 hover:bg-black hover:text-white " type="submit">Submit</button>
+          <button className=" border-[1px] border-solid border-black rounded-lg px-20 py-2 hover:bg-black hover:text-white " type="submit">Submit</button>
         </form>
       </div>
     </div>

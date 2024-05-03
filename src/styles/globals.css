@@ -34,7 +34,9 @@
 
       --radius: 0.5rem;
     }
-
+    a:link {
+      text-decoration: none;
+    }
     .dark {
       --background: 224 71.4% 4.1%;
       --foreground: 210 20% 98%;

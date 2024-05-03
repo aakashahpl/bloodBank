@@ -5,9 +5,12 @@ import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const handleSubmit = (values) => {
+    console.log(values);
+  }
   return (
     <main
-      className=" px-11"
+      className=" px-11 bg-[#6c757d]"
     >
 
       <section id="banner">
@@ -125,7 +128,7 @@ export default function Home() {
           <div className="card card-body bg-dark text-white">
             <div className="card-title text-center">
               <h3>REGISTRATION FORM</h3>
-              <p className="font-weight-light"><small>Please fill the following information to register as voluntary blood donor and become part of our vision. Kindly update your date of donation once done, so that your name will be hidden automatically till next 4 Months. Also please update your profile/information if in case you relocate in future
+              <p className="font-weight-light"><small>Please fill the following information to request for blood.
               </small></p>
             </div>
             <form className="">
@@ -140,17 +143,14 @@ export default function Home() {
                 </div>
 
                 <div className="form-group col-md-3">
-                  <input type="text" name="weight" id="weight" placeholder="Weight" className="form-control" />
+                  <input type="text" name="Date of birth" id="Date of birth" placeholder="Date of birth" className="form-control" />
                 </div>
               </div>
 
               <div className="form-row">
-                <div className="form-group col-md-6">
-                  <input type="text" name="Address" id="address" placeholder="Address" className="form-control" />
-                </div>
 
                 <div className="form-group col-md-3">
-                  <input type="number" name="number" id="number" placeholder="Number" className="form-control" maxlength="11" />
+                  <input type="email" name="email" id="number" placeholder="email" className="form-control" maxlength="50" />
                 </div>
                 <div className="form-group col-md-3">
                   <select className="form-control" id="bloodgroup">
@@ -167,7 +167,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <input type="submit" name="submit" className="btn btn-outline-success btn-lg btn-block" />
+              <button type="submit" onSubmit={handleSubmit} name="submit" className="btn btn-outline-success btn-lg btn-block" >Submit</button>
             </form>
           </div>
 
